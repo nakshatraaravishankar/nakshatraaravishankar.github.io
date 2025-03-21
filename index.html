@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nakshatraa's Webpage</title>
+  <title>Nakshatraa's Website</title>
   <link rel="icon" href="favicon/favicon.png" type="image/png" />
   <style>
+	html, body {
+	  margin: 0;
+      padding: 0;
+      height: 100vh; 
+	  width: 100vw;
+	}
     body {
-      font-family: Arial, sans-serif;
+
+      background-image: url('images/mcastle.jpg');
+      background-size: contain; 
+	  background-repeat: no-repeat;
+      background-position: center; 
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+	  font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #ffffff;
     }
     h1 {
-      color: #ee33ff;
+      color: #452658;
+    }
+    p {
+      color: #e65a39;
+    }
+    .marquee-container {
+      position: absolute;
+      bottom: 0; 
+	  right: 0.22%; 
+      width: 100%; 
+    }
+    .marquee-container img {
+      width: 150px; 
     }
   </style>
+  <script>
+  // Unmute the audio after user interaction
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    audio.muted = false; // Unmute the audio
+  });
+</script>
 </head>
 <body>
-  <h1>Welcome to My WebPage!</h1>
+  <audio id="bg-music" autoplay loop muted>
+	  <source src="sound/bg_music.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+  </audio>
+  <h1>Welcome to Nakshatraa's mythical castle on the internet!</h1>
   <center>
-     <p>This is my first webpage. I made it myself!</p>
+    <p>You’ll need a passcode to join my club and gain entry to my castle! Are you interested in joining?</p>
   </center>
-  <marquee behavior="scroll" direction="down" scrollamount="10">
-  <div style="text-align: center;">
-    <img src="images/unicorn.png" alt="Cute Unicorn">
+  
+  <!-- Marquee starts from the bottom -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="up" scrollamount="10">
+      <div style="text-align: center;">
+        <img src="images/unicorn.png" alt="Cute Unicorn">
+      </div>
+    </marquee>
   </div>
 </body>
 </html>
